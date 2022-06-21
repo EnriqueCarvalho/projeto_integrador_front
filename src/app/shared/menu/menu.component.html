@@ -1,0 +1,44 @@
+<!-- <div *ngIf="mostrarMenu">  -->
+ <div>  
+    <div  id="mobile-nav" onclick="  $('nav').toggleClass('active');">
+      <p><i class="fas fa-bars"></i></p> 
+    </div>y
+    <div class="nav-top" >
+    <!-- <div class="nav-top"  (click)="logout()"> -->
+      <p>
+        
+        <i class="fas fa-sign-out-alt fa-2x"></i>
+      </p>
+    </div>
+      <nav>
+        <ul class="menu">
+         
+          <li>
+            <a routerLink="" onclick="  $('nav').removeClass('active');">
+              <i class="fas fa-home fa-lg p-25"></i>Página Inicial
+            </a>
+          </li>
+          <!-- <div *ngIf="tipoUsuario=='[U]'">  -->
+            <div> 
+    
+          <li>
+            <a routerLink="clientes" onclick="  $('nav').removeClass('active');">
+              <i class="far fa-calendar-check fa-lg p-25"></i> <span>Reservas</span></a>
+          </li>
+           <li>
+            <a routerLink="clientes/quadras" onclick="  $('nav').removeClass('active');">
+              <i class="fas fa-map-marker-alt  fa-lg p-25"></i> <span>Quadras</span></a>
+          </li>
+        </div>
+        <div>
+           <!-- <li *ngIf="tipoUsuario=='[A]'">  -->
+           <li > 
+    
+          
+            <a routerLink="quadras" onclick="  $('nav').removeClass('active');">
+              <i class="fas fa-clipboard-list fa-lg p-25"></i> <span>Reservas</span></a>
+          </li>
+        </div>
+        </ul>
+      </nav>
+     </div>

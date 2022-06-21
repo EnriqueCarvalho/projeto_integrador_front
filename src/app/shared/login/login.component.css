@@ -1,0 +1,32 @@
+
+
+.container-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+}
+.left{
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;    
+    background-color: var(--ver);
+    color: var(--bra);
+}
+.right{
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+form.ng-submitted.ng-invalid input.ng-invalid{
+    border: 1px solid red;
+  }
+  form.ng-submitted.ng-invalid select.ng-invalid{
+    border: 1px solid red;
+  }

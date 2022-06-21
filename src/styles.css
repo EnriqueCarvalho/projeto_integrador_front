@@ -1,0 +1,11 @@
+@import '~normalize.css';
+
+:root{
+    --lar:#fa8334;
+    --ver: #227b38;
+    --bra: #fefaef;
+}
+
+.btn-success{
+    background-color: var(--ver);
+}

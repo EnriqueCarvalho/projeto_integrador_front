@@ -1,0 +1,37 @@
+<div class="container-login">
+  <div class="left">
+    <h1>
+      Sua diversão, nosso
+compromisso
+    </h1>
+  </div>
+
+  <div class="right">
+    <form [formGroup]="formulario" (ngSubmit)="fazerLogin()">
+      <div class="container-fluid ">
+        <h1 class="text-center mb-5">Login</h1>
+        <div class="row justify-content-center align-items-center h-100">
+          <div>
+            <div class="form-group mb-2 ">
+              <label for="exampleInputEmail1">LOGIN</label>
+              <input formControlName="login" _ngcontent-c0="" class="form-control form-control-lg" placeholder="Digite seu login"
+                type="text">
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputEmail1">SENHA</label>
+              <input formControlName="senha" class="form-control form-control-lg" placeholder="Digite sua senha" type="password">
+
+            </div>
+            <div class="mb-5">Não possui conta? <a><span style="color: var(--lar); font-weight: bold; cursor: pointer;" routerLink="/cadastrar">Cadastre-se</span></a></div>
+
+            <div class="form-group ">
+              <button class="btn btn-success btn-lg col-12" type="submit">Login</button>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
