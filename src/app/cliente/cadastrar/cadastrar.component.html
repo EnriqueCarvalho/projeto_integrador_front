@@ -1,2 +1,52 @@
-<p>cadastrar works!</p>
+<div class="container">
+<h1 class="mt-5 mb-6 text-center">Criar uma nova conta</h1>
+<form [formGroup]="formulario" (ngSubmit)="cadastrar()" >
 
+  <div class="row mt-5" >
+    <div class="col-md-8">
+      <label for="cd-nome">NOME <span style="color: red;">*</span></label>
+      <input class="form-control" id="cd-nome"  formControlName="nome" >
+        
+    </div>
+    <div class="col-md-4">
+      <label for="cd-cpf">CPF <span style="color: red;">*</span></label>
+      <input class="form-control" id="cd-cpf"  formControlName="cpf" >
+        
+    </div>  
+  </div>
+
+  <div class="row mt-5" >
+    <div class="col-md-8">
+      <label for="cd-email">EMAIL <span style="color: red;">*</span></label>
+      <input class="form-control" id="cd-email" formControlName="email" >
+        
+    </div>
+    <div class="col-md-4">
+      <label for="cd-fone">FONE <span style="color: red;">*</span></label>
+      <input class="form-control"  id="cd-fone" formControlName="fone" >
+        
+    </div>  
+  </div>
+
+  <div class="row mt-5" >
+    <div class="col-md-6">
+      <label for="cd-login">LOGIN <span style="color: red;">*</span></label>
+      <input class="form-control"  formControlName="login" >
+      
+    </div>
+    <div class="col-md-6">
+      <label for="exampleFormControlSelect1">SENHA <span style="color: red;">*</span></label>
+      <input class="form-control"   formControlName="senha" >
+       
+    </div>  
+  </div>
+  <span style="color: red;">*</span> itens obrigatórios
+
+<div class="btns">
+
+  <button (click)="cancelar()"  class="btn btn-lg btn-danger text-right mt-5 rounded-0">Cancelar</button>
+  <button  type="submit" class="btn btn-lg btn-success text-right mt-5 rounded-0">Cadastrar</button>
+  
+</div>  
+</form>
+</div>

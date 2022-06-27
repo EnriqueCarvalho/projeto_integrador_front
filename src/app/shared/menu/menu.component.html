@@ -1,10 +1,10 @@
-<!-- <div *ngIf="mostrarMenu">  -->
- <div>  
+ <div *ngIf="mostrarMenu"> 
+
     <div  id="mobile-nav" onclick="  $('nav').toggleClass('active');">
       <p><i class="fas fa-bars"></i></p> 
     </div>y
-    <div class="nav-top" >
-    <!-- <div class="nav-top"  (click)="logout()"> -->
+  
+     <div class="nav-top" style="cursor:pointer ;" (click)="logout()"> 
       <p>
         
         <i class="fas fa-sign-out-alt fa-2x"></i>
@@ -13,32 +13,39 @@
       <nav>
         <ul class="menu">
          
-          <li>
+          <!-- <li>
             <a routerLink="" onclick="  $('nav').removeClass('active');">
               <i class="fas fa-home fa-lg p-25"></i>Página Inicial
             </a>
-          </li>
+          </li> -->
           <!-- <div *ngIf="tipoUsuario=='[U]'">  -->
             <div> 
     
           <li>
-            <a routerLink="clientes" onclick="  $('nav').removeClass('active');">
+            <a routerLink="cliente/reservas" onclick="  $('nav').removeClass('active');">
               <i class="far fa-calendar-check fa-lg p-25"></i> <span>Reservas</span></a>
           </li>
-           <li>
+           <!-- <li>
             <a routerLink="clientes/quadras" onclick="  $('nav').removeClass('active');">
               <i class="fas fa-map-marker-alt  fa-lg p-25"></i> <span>Quadras</span></a>
-          </li>
+          </li> -->
+          
         </div>
         <div>
            <!-- <li *ngIf="tipoUsuario=='[A]'">  -->
-           <li > 
-    
+           <!-- <li >   
           
             <a routerLink="quadras" onclick="  $('nav').removeClass('active');">
               <i class="fas fa-clipboard-list fa-lg p-25"></i> <span>Reservas</span></a>
-          </li>
+          </li>         -->
+       
         </div>
+        <li>  
+          
+          <a onclick=" $('nav').removeClass('active');"  (click)="getUsuario()" style="cursor: pointer ;">
+            <i class="fas fa-cog fa-lg p-25"></i><span>Minha conta </span></a>
+        </li>
         </ul>
       </nav>
      </div>
+   

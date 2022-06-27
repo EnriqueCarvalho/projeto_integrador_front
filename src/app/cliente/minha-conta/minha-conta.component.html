@@ -1,0 +1,59 @@
+<div class="container">
+    <h1 class="mt-5 mb-6 text-center">Minha conta</h1>
+    <form [formGroup]="formulario" (ngSubmit)="salvar()" >
+    
+      <div class="row mt-5" >
+        <div class="col-md-8">
+          <label for="cd-nome">NOME <span style="color: red;">*</span></label>
+          <input  class="form-control" id="cd-nome"  formControlName="nome" value="{{usuario.nome}}">
+            
+        </div>
+        <div class="col-md-4">
+          <label for="cd-cpf">CPF <span style="color: red;">*</span></label>
+          <input class="form-control" id="cd-cpf"  formControlName="cpf"  value="{{usuario.cpf}}">
+            
+        </div>  
+      </div>
+    
+      <div class="row mt-5" >
+        <div class="col-md-8">
+          <label for="cd-email">EMAIL <span style="color: red;">*</span></label>
+          <input class="form-control" id="cd-email" formControlName="email"  value="{{usuario.email}}">
+            
+        </div>
+        <div class="col-md-4">
+          <label for="cd-fone">FONE <span style="color: red;">*</span></label>
+          <input class="form-control"  id="cd-fone" formControlName="fone" value="{{usuario.fone}}">
+            
+        </div>  
+      </div>
+    
+      <div class="row mt-5" >
+        <div class="col-md-6">
+          <label for="cd-login">LOGIN <span style="color: red;">*</span></label>
+          <input class="form-control"  formControlName="login" value="{{usuario.login}}">
+          
+        </div>
+        <div class="col-md-6">
+          <label for="exampleFormControlSelect1">SENHA <span style="color: red;">*</span></label>
+          <input class="form-control"   formControlName="senha" value="{{usuario.senha}}">
+           
+        </div>  
+      </div>
+
+    
+      <span style="color: red;">*</span> itens obrigatórios
+    
+    <div class="btns">
+    
+   
+        <button [ngStyle]="{'display': display_c}"  type="button" (click)="cancelar();"  class="btn btn-lg btn-danger text-right mt-5 rounded-0">Cancelar</button>
+        <button  [ngStyle]="{'display': display_c}"  type="button" class="btn btn-lg btn-warning text-right mt-5 rounded-0" (click)="desativarConta();" >Desativar</button>
+        <button  [ngStyle]="{'display': display_c}" type="submit" class="btn btn-lg btn-success text-right mt-5 rounded-0" >Salvar</button>
+     
+
+      <button [ngStyle]="{'display': display_a}" type="button" (click)="alterar()"  class="btn btn-lg btn-warning text-right mt-5 rounded-0" >Alterar</button>
+      
+    </div>  
+    </form>
+    </div>

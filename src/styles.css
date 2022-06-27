@@ -9,3 +9,17 @@
 .btn-success{
     background-color: var(--ver);
 }
+
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.btns button{
+    width: 220px;
+    
+}
+
+
