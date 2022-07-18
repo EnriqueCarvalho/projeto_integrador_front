@@ -96,7 +96,7 @@ export class MinhaContaComponent implements OnInit {
         if (u != null){
           alert("Usuario cadastrado com sucessso")
           this.loginService.mostrarMenuEmitter.emit
-          this.router.navigate(['cliente/reservas'])
+         this.loginService.homebyLogin()
         }else{
           alert("Erro ao cadastrar Usuário")  
         }

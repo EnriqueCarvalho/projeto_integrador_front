@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from '../model/usuario';
 import { LoginService } from '../service/login.service';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,18 +12,26 @@ import { LoginService } from '../service/login.service';
 export class MenuComponent implements OnInit {
 
   mostrarMenu:boolean = false
+  usuarioLogado:Usuario = new Usuario
 
   constructor( 
     private loginService: LoginService,
     private router: Router
     ) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
+    if(this.loginService.isAutenticado()){
+      this.usuarioLogado=this.loginService.getUsuarioLogado()
+    } 
     this.loginService.mostrarMenuEmitter.subscribe(
       mostrar => this.mostrarMenu = mostrar
-    )
+    )  
     
+    this.loginService.usuarioLogadoEmitter.subscribe(
+      usuarioLogado => this.usuarioLogado = usuarioLogado
+    ) 
+
+   
   }
 
   logout(){

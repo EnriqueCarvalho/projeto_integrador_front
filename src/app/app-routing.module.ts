@@ -19,7 +19,11 @@ const routes: Routes = [
     path: 'cliente',
     canActivate :[UsuarioGuard],
     loadChildren: () => import('./cliente/cliente.module').then (m=>m.ClienteModule)
-
+  },
+  {
+    path: 'funcionario',
+    canActivate :[UsuarioGuard],
+    loadChildren: () => import('./funcionario/funcionario.module').then (m=>m.FuncionarioModule)
   },
 ];
 

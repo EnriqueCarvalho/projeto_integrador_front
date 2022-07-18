@@ -1,9 +1,12 @@
 @import '~normalize.css';
 
 :root{
-    --lar:#fa8334;
+    --scundaria:#fa8334;
+    --primaria: #227b38;
     --ver: #227b38;
+    
     --bra: #fefaef;
+    --lar : #fa8334;
 }
 
 .btn-success{

@@ -30,8 +30,12 @@ export class LoginService {
     this.mostrarMenuEmitter.emit(true)
     this.usuarioLogadoEmitter.emit(usuario)
     console.log(usuario.tipo)
+    //verifica se o usuário é do tipo cliente ou funcionário
     if(usuario.tipo != 'C'){
       this.routP = 'funcionario'
+      document.documentElement.style.setProperty('--primaria','#fa8334')
+    }else{
+      document.documentElement.style.setProperty('--primaria','#227b38')
     }
     this.router.navigate([this.routP+"/reservas"])
   }
@@ -55,9 +59,10 @@ export class LoginService {
   }
 
   logout(){
-    
+     
       sessionStorage.removeItem("usuario-logado");
       this.mostrarMenuEmitter.emit(false)
+      document.documentElement.style.setProperty('--primaria','#227b38')
       this.router.navigate(['/']);
     
   }
@@ -78,5 +83,13 @@ export class LoginService {
 
  desativarConta(usuario: Usuario){
   return this.http.put<Usuario>(this.API_URL+'desativarconta', usuario);  
+ }
+
+ homebyLogin(){
+  if(this.getUsuarioLogado().tipo == 'C'){
+    this.router.navigate(['cliente/reservas'])
+  }else{
+    this.router.navigate(['funcionario/reservas'])
+  }
  }
 }
