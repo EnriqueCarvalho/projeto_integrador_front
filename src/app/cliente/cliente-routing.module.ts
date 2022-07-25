@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from '../shared/login/login.component';
+import { LoginComponent } from '../shared/components/login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { MinhaContaComponent } from '../shared/minha-conta/minha-conta.component';
+import { MinhaContaComponent } from '../shared/components/minha-conta/minha-conta.component';
 import { ReservasComponent } from './reservas/reservas.component';
 
 const routes: Routes = [

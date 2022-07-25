@@ -1,0 +1,52 @@
+<div class="container">
+    <h1 class="mt-5 mb-6 text-center">Editar espaço físico</h1>
+    <form [formGroup]="formulario" (ngSubmit)="salvar()" >
+
+      <input class="form-control" id="cd-id"  formControlName="id"  value="{{espaco.id}}" style="visibility: hidden;">
+           
+    
+      <div class="row mt-8" >
+        <div class="col-md-8">
+          <label for="cd-nome">NOME <span style="color: red;">*</span></label>
+          <input class="form-control" id="cd-nome"  formControlName="nome" value="{{espaco.nome}}" placeholder="Quadra de futsal...">            
+        </div>
+        <div class="col-md-4">
+          <label for="cd-qtdMax">QUANTIDADE MÁXIMA <span style="color: red;">*</span></label>
+          <input class="form-control" type="number" id="cd-qtdMax" formControlName="qtdMax" value="{{espaco.qtdMax}}" placeholder="20">
+            
+        </div>
+        
+      </div>
+    
+      <div class="row mt-5" >
+        <div class="col-md-12">
+          <label for="cd-descricao">DESCRIÇÃO <span style="color: red;">*</span></label>
+          <textarea style=" resize: none; height: 100px;" class="form-control" id="cd-descricao" value="{{espaco.descricao}}" formControlName="descricao" placeholder="Quadra coberta destinada ao futsal"></textarea>
+            
+        </div>  
+       
+      </div>
+    
+      <div class="row mt-5" >
+        <div class="col-md-4">
+          <label for="cd-valor">VALOR <span style="color: red;">*</span></label>
+          <input   class="form-control"  id="cd-valor" formControlName="valor" value="{{espaco.valor}}" placeholder="120,00">
+            
+        </div>  
+      </div>
+      <span style="color: red;">*</span> itens obrigatórios
+    
+    <div class="btns">
+    
+        <button [ngStyle]="{'display': display_c}"  type="button" (click)="cancelar();"  class="btn btn-lg btn-primary text-right mt-5 rounded-0">Cancelar</button>
+        <button  [ngStyle]="{'display': display_c}" type="button" (click)="excluir();" class="btn btn-lg btn-danger text-right mt-5 rounded-0" >Excluir</button>
+        <button  [ngStyle]="{'display': display_c}" type="submit" class="btn btn-lg btn-success text-right mt-5 rounded-0" >Salvar</button>
+        
+     
+
+      <button [ngStyle]="{'display': display_a}" type="button" (click)="alterar()"  class="btn btn-lg btn-warning text-right mt-5 rounded-0" >Alterar</button>
+      
+      
+    </div>  
+    </form>
+    </div>

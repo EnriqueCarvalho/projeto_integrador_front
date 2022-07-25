@@ -47,9 +47,7 @@ export class CadastroQuadraComponent implements OnInit {
     this.disableForm()
   }
 
-  salvar(){
-
-   
+  salvar(){  
     
     if (this.formulario.valid){
       

@@ -14,6 +14,9 @@
     align-items: baseline;    
     background-color: var(--ver);
     color: var(--bra);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .right{
     height: 100vh;

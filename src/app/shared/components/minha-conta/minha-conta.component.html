@@ -5,7 +5,7 @@
       <div class="row mt-5" >
         <div class="col-md-8">
           <label for="cd-nome">NOME <span style="color: red;">*</span></label>
-          <input  class="form-control" id="cd-nome"  formControlName="nome" value="{{usuario.nome}}">
+          <input  class="form-control" id="cd-nome"  formControlName="nome" value="{{usuario.nome}}" >
             
         </div>
         <div class="col-md-4">
@@ -36,7 +36,8 @@
         </div>
         <div class="col-md-6">
           <label for="exampleFormControlSelect1">SENHA <span style="color: red;">*</span></label>
-          <input class="form-control"   formControlName="senha" value="{{usuario.senha}}">
+          <input class="form-control" type="password"  formControlName="senha" value="{{usuario.senha}}">
+          <p [ngStyle]="{'display': display_c}">É preciso confirmar sua senha</p>
            
         </div>  
       </div>
@@ -47,8 +48,8 @@
     <div class="btns">
     
    
-        <button [ngStyle]="{'display': display_c}"  type="button" (click)="cancelar();"  class="btn btn-lg btn-danger text-right mt-5 rounded-0">Cancelar</button>
-        <button  [ngStyle]="{'display': display_c}"  type="button" class="btn btn-lg btn-warning text-right mt-5 rounded-0" (click)="desativarConta();" >Desativar</button>
+        <button [ngStyle]="{'display': display_c}"  type="button" (click)="cancelar();"  class="btn btn-lg btn-primary text-right mt-5 rounded-0">Cancelar</button>
+        <button  [ngStyle]="{'display': display_c}"  type="button" class="btn btn-lg btn-danger text-right mt-5 rounded-0" (click)="desativarConta();" >Desativar</button>
         <button  [ngStyle]="{'display': display_c}" type="submit" class="btn btn-lg btn-success text-right mt-5 rounded-0" >Salvar</button>
      
 

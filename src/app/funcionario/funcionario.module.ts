@@ -7,19 +7,31 @@ import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CadastroEspacosComponent } from './cadastro-espacos/cadastro-espacos.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { NovoEspacoComponent } from './cadastro-espacos/novo-espaco/novo-espaco.component';
+import { EditarEspacoComponent } from './cadastro-espacos/editar-espaco/editar-espaco.component';
+import { TextMaskModule } from 'angular2-text-mask';
+import { CadastroFuncionariosComponent } from './cadastro-funcionarios/cadastro-funcionarios.component';
+import { NovoFuncionarioComponent } from './cadastro-funcionarios/novo-funcionario/novo-funcionario.component';
 
 
 @NgModule({
   declarations: [
     ReservasQuadraComponent,
     CadastroQuadraComponent,
-    CadastroEspacosComponent
+    CadastroEspacosComponent,
+    NovoEspacoComponent,
+    EditarEspacoComponent,
+    CadastroFuncionariosComponent,
+    NovoFuncionarioComponent
   ],
   imports: [
     CommonModule,
     FuncionarioRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AccordionModule.forRoot(),
+    TextMaskModule
   ]
 })
 export class FuncionarioModule { }

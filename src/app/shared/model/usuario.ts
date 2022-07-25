@@ -1,12 +1,14 @@
 export class Usuario{
     id?: number ;
-    nome?: string = '';
+    nome: string = '';
     email?: string = '';
     fone?: string = '';
     tipo?: string = '';
-    cpf?: string = '';
+    cpf: string = '';
     login?: string = '';
     senha?:string = '';
     ativo?:string = '';
+    idFuncionario?: number 
+    idQuadra?: number
 
 }

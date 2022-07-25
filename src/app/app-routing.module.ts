@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cliente/cadastrar/cadastrar.component';
 import { UsuarioGuard } from './shared/guards/usuario.guard';
-import { LoginComponent } from './shared/login/login.component';
+import { LoginComponent } from './shared/components/login/login.component';
 
 
 const routes: Routes = [

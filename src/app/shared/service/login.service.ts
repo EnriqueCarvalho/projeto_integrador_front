@@ -33,7 +33,7 @@ export class LoginService {
     //verifica se o usuário é do tipo cliente ou funcionário
     if(usuario.tipo != 'C'){
       this.routP = 'funcionario'
-      document.documentElement.style.setProperty('--primaria','#fa8334')
+      //document.documentElement.style.setProperty('--primaria','#fa8334')
     }else{
       document.documentElement.style.setProperty('--primaria','#227b38')
     }

@@ -4,11 +4,15 @@
       <p><i class="fas fa-bars"></i></p> 
     </div>y
   
-     <div class="nav-top" style="cursor:pointer ;" (click)="logout()"> 
+     <div class="nav-top" style="cursor:pointer ;" > 
       <p>
-        
-        <i class="fas fa-sign-out-alt fa-2x"></i>
+        <span *ngIf="usuarioLogado.tipo=='A' || usuarioLogado.tipo=='F'" title="Usuário Funcionário"><i class="fa fa-cogs" aria-hidden="true" style="margin-right: 7px;"></i></span>
+        <span style="font-size:20px ;padding-right: 25px;">{{usuarioLogado.nome}}</span>
+        <i class="fas fa-sign-out-alt fa-2x" (click)="logout()"></i>
       </p>
+
+      
+
     </div>
       <nav>
         <ul class="menu">
@@ -38,7 +42,7 @@
 
                 <li>
                   <a routerLink="funcionario/espacos" onclick="  $('nav').removeClass('active');">
-                    <i class="far fa-calendar-check fa-lg p-25"></i> <span>Espaços</span></a>
+                    <i class="fa fa-cubes fa-lg p-25" aria-hidden="true"></i><span>Espaços</span></a>
                 </li>
                 
               </div>
@@ -47,7 +51,14 @@
               <div *ngIf="usuarioLogado.tipo=='A'">
                 <li>
                   <a routerLink="funcionario/quadra" onclick="  $('nav').removeClass('active');">
-                    <i class="far fa-calendar-check fa-lg p-25"></i> <span>Quadra</span></a>
+                    <i class="fa fa-cube fa-lg p-25" aria-hidden="true"></i><span>Quadra</span></a>
+                </li>
+              </div>
+
+              <div *ngIf="usuarioLogado.tipo=='A'">
+                <li>
+                  <a routerLink="funcionario/funcionarios" onclick="  $('nav').removeClass('active');">
+                    <i class="fa fa-id-card fa-lg p-25" aria-hidden="true"></i><span>Funcionários</span></a>
                 </li>
               </div>
              

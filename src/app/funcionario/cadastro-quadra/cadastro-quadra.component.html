@@ -16,34 +16,34 @@
             
         </div>
         <div class="col-md-4">
-          <label for="cd-cpf">CNPJ <span style="color: red;">*</span></label>
-          <input class="form-control" id="cd-cpf"  formControlName="cnpj"  value="{{quadra.cnpj}}">
+          <label for="cd-cnpj">CNPJ <span style="color: red;">*</span></label>
+          <input class="form-control" id="cd-cnpj"  formControlName="cnpj"  value="{{quadra.cnpj}}">
             
         </div>  
       </div>
     
       <div class="row mt-5" >
         <div class="col-md-8">
-          <label for="cd-email">CEP <span style="color: red;">*</span></label>
-          <input class="form-control" id="cd-email" formControlName="cep"  value="{{quadra.cep}}">
+          <label for="cd-cep">CEP <span style="color: red;">*</span></label>
+          <input class="form-control" id="cd-cep" formControlName="cep"  value="{{quadra.cep}}">
             
         </div>
         <div class="col-md-4">
-          <label for="cd-fone">Rua <span style="color: red;">*</span></label>
-          <input class="form-control"  id="cd-fone" formControlName="ruaEnd" value="{{quadra.ruaEnd}}">
+          <label for="cd-ruaEnd">Rua <span style="color: red;">*</span></label>
+          <input class="form-control"  id="cd-ruaEnd" formControlName="ruaEnd" value="{{quadra.ruaEnd}}">
             
         </div>  
       </div>
     
       <div class="row mt-5" >
         <div class="col-md-6">
-          <label for="cd-login">Bairro <span style="color: red;">*</span></label>
-          <input class="form-control"  formControlName="bairroEnd" value="{{quadra.bairroEnd}}">
+          <label for="cd-bairroEnd">Bairro <span style="color: red;">*</span></label>
+          <input class="form-control" id="cd-bairroEnd" formControlName="bairroEnd" value="{{quadra.bairroEnd}}">
           
         </div>
         <div class="col-md-6">
-          <label for="exampleFormControlSelect1">Nº <span style="color: red;">*</span></label>
-          <input class="form-control"   formControlName="nroEnd" value="{{quadra.nroEnd}}">
+          <label for="cd-nroEnd">Nº <span style="color: red;">*</span></label>
+          <input class="form-control" id="cd-nroEnd"  formControlName="nroEnd" value="{{quadra.nroEnd}}">
            
         </div>  
       </div>
@@ -54,7 +54,7 @@
     <div class="btns">
     
    
-        <button [ngStyle]="{'display': display_c}"  type="button" (click)="cancelar();"  class="btn btn-lg btn-danger text-right mt-5 rounded-0">Cancelar</button>
+        <button [ngStyle]="{'display': display_c}"  type="button" (click)="cancelar();"  class="btn btn-lg btn-primary text-right mt-5 rounded-0">Cancelar</button>
         <button  [ngStyle]="{'display': display_c}" type="submit" class="btn btn-lg btn-success text-right mt-5 rounded-0" >Salvar</button>
      
 

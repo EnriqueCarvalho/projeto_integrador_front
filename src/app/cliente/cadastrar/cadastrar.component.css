@@ -4,3 +4,37 @@ form.ng-submitted.ng-invalid input.ng-invalid{
   form.ng-submitted.ng-invalid select.ng-invalid{
     border: 1px solid red;
   }
+
+  
+
+.container-login{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+}
+.left{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;    
+  background-color: var(--ver);
+  color: var(--bra);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.right{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  width: 95%;
+  padding: 10px;
+}

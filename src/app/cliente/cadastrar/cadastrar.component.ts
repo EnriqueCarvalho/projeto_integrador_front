@@ -14,6 +14,11 @@ export class CadastrarComponent implements OnInit {
   formulario: FormGroup = new FormGroup({});
   usuario: Usuario = new Usuario();
 
+  cpf = [ /[0-9]/, /\d/, /\d/, '.',/[1-9]/, /\d/, /\d/,'.',/[1-9]/, /\d/, /\d/,'-' , /\d/, /\d/,]
+  fone = [ '(',/[0-9]/, /\d/,')',' ', /\d/,' ',/[1-9]/, /\d/, /\d/,/[1-9]/,'-', /\d/, /\d/ , /\d/, /\d/,]
+
+  
+
   
 
   constructor(

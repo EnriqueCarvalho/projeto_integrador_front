@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <ng-template  ngFor [ngForOf]="funcionarios" let-funcionario let-i="index">
+        
+        <accordion [isAnimated]="true">
+            <accordion-group [heading]="'Matrícula: '+funcionario.matricula " style="text-decoration: none;">
+              <p *ngIf="funcionario.usuario?.tipo=='A'" ><i class="fa fa-star" aria-hidden="true" style="color: gold;"></i></p>              
+              <p >Nome: {{ funcionario.usuario?.nome }}</p>
+              <p >Email: {{ funcionario.usuario?.email }}</p>
+              <p >Fone: {{ funcionario.usuario?.fone }}</p>
+              <p >CPF: {{ funcionario.usuario?.cpf }}</p>
+              <button *ngIf="funcionario.usuario?.tipo!='A'" class="btn btn-sm btn-warning text-right mt-2" (click)="editar(funcionario)">Editar</button>
+            </accordion-group>
+            </accordion>
+      </ng-template >
+      
+
+      <div>
+        <button  type="button" class="btn btn-lg btn-success text-right mt-5 " (click)="novoFuncionario()">Novo</button>
+     
+
+      </div>
+</div>

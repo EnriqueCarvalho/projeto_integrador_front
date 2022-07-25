@@ -1,3 +1,18 @@
 <div class="container mt-5">
-    <p>espacos-quadra works!</p>
+    <ng-template  ngFor [ngForOf]="espacos" let-espaco let-i="index">
+        
+        <accordion [isAnimated]="true">
+            <accordion-group [heading]=" espaco.nome" style="text-decoration: none;">              
+              <p >Descrição: {{ espaco.descricao }}</p>
+              <p>Quantidade máxima: {{ espaco.qtdMax  }}</p>
+              <p>valor: {{ espaco.valor }}</p>
+              <button class="btn btn-sm btn-warning text-right mt-2" (click)="editar(espaco)">Editar</button>
+            </accordion-group>
+            </accordion>
+      </ng-template >
+      <div>
+        <button  type="button" class="btn btn-lg btn-success text-right mt-5 " (click)="novoEspaco()">Novo</button>
+     
+
+      </div>
 </div>
