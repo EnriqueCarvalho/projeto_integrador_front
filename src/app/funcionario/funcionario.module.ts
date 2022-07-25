@@ -13,6 +13,7 @@ import { EditarEspacoComponent } from './cadastro-espacos/editar-espaco/editar-e
 import { TextMaskModule } from 'angular2-text-mask';
 import { CadastroFuncionariosComponent } from './cadastro-funcionarios/cadastro-funcionarios.component';
 import { NovoFuncionarioComponent } from './cadastro-funcionarios/novo-funcionario/novo-funcionario.component';
+import { CadastroHorariosComponent } from './cadastro-horarios/cadastro-horarios.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NovoFuncionarioComponent } from './cadastro-funcionarios/novo-funcionar
     NovoEspacoComponent,
     EditarEspacoComponent,
     CadastroFuncionariosComponent,
-    NovoFuncionarioComponent
+    NovoFuncionarioComponent,
+    CadastroHorariosComponent
   ],
   imports: [
     CommonModule,

@@ -5,6 +5,7 @@ import { EditarEspacoComponent } from './cadastro-espacos/editar-espaco/editar-e
 import { NovoEspacoComponent } from './cadastro-espacos/novo-espaco/novo-espaco.component';
 import { CadastroFuncionariosComponent } from './cadastro-funcionarios/cadastro-funcionarios.component';
 import { NovoFuncionarioComponent } from './cadastro-funcionarios/novo-funcionario/novo-funcionario.component';
+import { CadastroHorariosComponent } from './cadastro-horarios/cadastro-horarios.component';
 import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.component';
 import { ReservasQuadraComponent } from './reservas-quadra/reservas-quadra.component';
 
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'novo-funcionario',
     component: NovoFuncionarioComponent
+  },
+  {
+    path:'horarios',
+    component: CadastroHorariosComponent
   }
 ];
 

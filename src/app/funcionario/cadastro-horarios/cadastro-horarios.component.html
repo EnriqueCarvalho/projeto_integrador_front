@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h1 style="text-align: center;" class="mb-5">Cadastro de horários</h1>
+    <ol class="list-group ">
+    <ng-template  ngFor [ngForOf]="horarios" let-horario let-i="index">        
+        
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              {{horario.valorAlfa}}
+            </div>
+            <span class="badge bg-danger rounded-pill" (click)="removerHorario(horario.id)" style="cursor: pointer;"><i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </li>
+           
+    </ng-template >
+</ol>
+<div>
+    <button [ngStyle]="{'display': display_novo}" type="button" class="btn btn-lg btn-success text-right mt-5 mb-5 " (click)="novoHorario()">Novo</button>
+</div> 
+
+<form [formGroup]="formulario" (ngSubmit)="cadastrar()" [ngStyle]="{'display': display_form}" class="mt-5">
+    
+    <div class="row mt-8" >
+      <div class="col-md-8">
+        <label for="cd-horario">HORÁRIO <span style="color: red;">*</span></label>
+        <input [textMask]="{mask: horario_mask}" class="form-control" id="cd-horario"  formControlName="horario" placeholder="20:00">            
+      </div>      
+    </div>
+    <span style="color: red;">*</span> itens obrigatórios
+   
+    <div class="btns">
+    
+        <button (click)="cancelar()"  class="btn btn-lg btn-primary text-right mt-5 ">Cancelar</button>
+        <button  type="submit" class="btn btn-lg btn-success text-right mt-5 ">Cadastrar</button>
+        
+    </div> 
+
+  </form>
+    
+
+</div>
