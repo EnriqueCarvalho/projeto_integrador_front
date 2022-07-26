@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Reserva } from 'src/app/shared/model/reserva';
+import { ReservaService } from 'src/app/shared/service/reserva.service';
 
 @Component({
   selector: 'app-reservas',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservasComponent implements OnInit {
 
-  constructor() { }
+  reservas: Reserva[] = []
+
+  constructor(
+    private reservaService: ReservaService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.reservaService.getReservasByUsuario().subscribe(reservas => this.reservas = reservas)
   }
+
+  editar(reserva: Reserva){
+
+  }
+
+  novaReserva(){
+    this.router.navigate(['cliente/nova-reserva'])
+  }
+
 
 }

@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReservasComponent } from './reservas/reservas.component';
 import { MinhaContaComponent } from '../shared/components/minha-conta/minha-conta.component';
 import { TextMaskModule } from 'angular2-text-mask';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { NovaReservaComponent } from './reservas/nova-reserva/nova-reserva.component';
 
 
 
@@ -16,7 +18,8 @@ import { TextMaskModule } from 'angular2-text-mask';
   declarations: [
     CadastrarComponent,
     ReservasComponent,
-    MinhaContaComponent
+    MinhaContaComponent,
+    NovaReservaComponent
   ],
   imports: [
    
@@ -24,7 +27,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     ClienteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    TextMaskModule
+    TextMaskModule,
+    AccordionModule.forRoot(),
   
   ]
 })

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Reserva } from 'src/app/shared/model/reserva';
+import { ReservaService } from 'src/app/shared/service/reserva.service';
 
 @Component({
   selector: 'app-reservas-quadra',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservasQuadraComponent implements OnInit {
 
-  constructor() { }
+  reservas: Reserva[] = []
+
+  constructor(
+    private reservaService: ReservaService
+  ) { }
 
   ngOnInit(): void {
+
+    this.reservaService.getReservasByQuadra().subscribe(reservas => this.reservas = reservas)
+  }
+
+  editar(reserva: Reserva){
+
+  }
+
+  novoEspaco(){
+
   }
 
 }

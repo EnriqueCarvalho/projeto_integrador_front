@@ -1,0 +1,42 @@
+<div class="container">
+    <h1 class="mt-5 mb-6 text-center">Nova reserva</h1>
+    <form [formGroup]="formulario" (ngSubmit)="cadastrar()" >
+    
+        <div class="form-row" >
+            <div class="col">
+              <label for="quadra">Local</label>
+              <select  class="form-control" id="quadra"  formControlName="quadra" (change)="onSelect();onSelectData()">
+                <option *ngFor="let quadra of quadras" [value]="quadra.id">{{ quadra.nome }}</option>
+              </select>
+            </div>
+            <div class="col mt-3">
+              <label for="ambiente">Ambiente</label>
+              <select class="form-control" id="ambiente"  formControlName="ambiente" (change)="onSelectData()">
+                <option *ngFor="let esp of espacos" [value]="esp.id">{{ esp.nome }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mt-3">
+          <div class="mb-3 col ">
+            <label for="data" class="form-label">Data</label>
+            <input  type="date" class="form-control" id="data"  formControlName="data" (change)="onSelectData()" >
+          </div>
+            <div class="mb-3 col">
+            <label for="horario" class="form-label">Horário</label>
+            <select  class="form-control" id="horario"  formControlName="horario">
+              <option *ngFor="let hor of horarios" [value]="hor.valorAlfa">{{ hor.valorAlfa }}</option>
+            </select>
+          </div>
+        
+          
+        </div>
+      <span style="color: red;">*</span> itens obrigatórios
+     
+    <div class="btns">
+    
+      <button (click)="cancelar()"  class="btn btn-lg btn-primary text-right mt-5 ">Cancelar</button>
+      <button  type="submit" class="btn btn-lg btn-success text-right mt-5 ">Cadastrar</button>
+      
+    </div>  
+    </form>
+    </div>

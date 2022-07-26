@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Espaco } from 'src/app/shared/model/espaco';
 import { EspacoService } from 'src/app/shared/service/espaco.service';
+import { LoginService } from 'src/app/shared/service/login.service';
 
 
 @Component({
@@ -17,12 +18,13 @@ export class CadastroEspacosComponent implements OnInit {
   
   constructor(
     private espacoService: EspacoService,
-    private router:Router
+    private router:Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {
 
-    this.espacoService.getEspacosByQuadra().subscribe(espacos => this.espacos = espacos)
+    this.espacoService.getEspacosByQuadra(<string>this.loginService.getUsuarioLogado().idQuadra?.toString()).subscribe(espacos => this.espacos = espacos)
   }
 
   novoEspaco(){

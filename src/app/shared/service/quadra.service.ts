@@ -22,13 +22,14 @@ export class QuadraService {
   ) { }
 
   getQuadra():  Observable<Quadra>{
-    let id  = this.loginService.getUsuarioLogado().id;
-     
+    let id  = this.loginService.getUsuarioLogado().id;     
     const params = new HttpParams()
-    .set('idUsuario', <string>id?.toString());
-    
+    .set('idUsuario', <string>id?.toString());    
     return this.http.get<Quadra>(this.API_URL+'visualizar-quadra',{params }); 
+  }
 
+  getQuadras():  Observable<Quadra[]>{   
+    return this.http.get<Quadra[]>(this.API_URL+'visualizar-quadras'); 
   }
 
 

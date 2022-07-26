@@ -4,6 +4,7 @@ import { LoginComponent } from '../shared/components/login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { MinhaContaComponent } from '../shared/components/minha-conta/minha-conta.component';
 import { ReservasComponent } from './reservas/reservas.component';
+import { NovaReservaComponent } from './reservas/nova-reserva/nova-reserva.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path:'conta',
     component: MinhaContaComponent
+  },
+  {
+    path:'nova-reserva',
+    component: NovaReservaComponent
   }
 ];
 

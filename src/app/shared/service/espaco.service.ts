@@ -17,10 +17,10 @@ export class EspacoService {
   ) { }
 
 
-  getEspacosByQuadra(): Observable<Espaco[]>{
+  getEspacosByQuadra(idQuadra: string): Observable<Espaco[]>{
   
     const params = new HttpParams()
-    .set('idQuadra', <string>this.loginService.getUsuarioLogado().idQuadra?.toString());
+    .set('idQuadra',idQuadra );
 
     return this.httpClient.get<Espaco[]>(this.API_URL+'visualizar-espacos',{params})
     .pipe(
