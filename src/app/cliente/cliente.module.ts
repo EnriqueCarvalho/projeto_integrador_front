@@ -10,6 +10,7 @@ import { MinhaContaComponent } from '../shared/components/minha-conta/minha-cont
 import { TextMaskModule } from 'angular2-text-mask';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { NovaReservaComponent } from './reservas/nova-reserva/nova-reserva.component';
+import { EditarReservaComponent } from './reservas/editar-reserva/editar-reserva.component';
 
 
 
@@ -19,7 +20,8 @@ import { NovaReservaComponent } from './reservas/nova-reserva/nova-reserva.compo
     CadastrarComponent,
     ReservasComponent,
     MinhaContaComponent,
-    NovaReservaComponent
+    NovaReservaComponent,
+    EditarReservaComponent
   ],
   imports: [
    

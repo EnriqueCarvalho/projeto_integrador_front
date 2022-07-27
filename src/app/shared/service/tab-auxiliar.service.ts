@@ -23,8 +23,7 @@ export class TabAuxiliarService {
     .set('idQuadra', <string>this.loginService.getUsuarioLogado().idQuadra?.toString())
     .set('codTab',<string>codTab)  
 
-    return this.httpClient.get<TabAuxiliar[]>(this.API_URL+'visualizar-tabaux',{params})
-   
+    return this.httpClient.get<TabAuxiliar[]>(this.API_URL+'visualizar-tabaux',{params})  
     
   }
 
@@ -39,5 +38,19 @@ export class TabAuxiliarService {
     .set('idTabAux', <string>tabAuxiliar.id.toString());
     console.log(tabAuxiliar.id)
     return this.httpClient.delete(this.API_URL+'deletar-tabaux',{params,responseType : 'text'},);  
+  }
+
+
+  
+  getHorariosDisp(codTab:String,idEspaco: number, data: string ): Observable<TabAuxiliar[]>{
+  
+   
+    const params = new HttpParams()
+    .set('codTab', <string>codTab)
+    .set('idEspaco',<string>idEspaco.toString())
+    .set('data',<string>data)   
+    console.log("ta vindo ")
+    return this.httpClient.get<TabAuxiliar[]>(this.API_URL+'visualizar-horarios',{params})  
+    
   }
 }

@@ -35,7 +35,7 @@ export class LoginService {
       this.routP = 'funcionario'
       //document.documentElement.style.setProperty('--primaria','#fa8334')
     }else{
-      document.documentElement.style.setProperty('--primaria','#227b38')
+      this.routP = 'cliente'
     }
     this.router.navigate([this.routP+"/reservas"])
   }

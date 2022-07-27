@@ -22,7 +22,7 @@ export class ReservasComponent implements OnInit {
   }
 
   editar(reserva: Reserva){
-
+    this.router.navigate(['cliente/editar-reserva',reserva.id])
   }
 
   novaReserva(){

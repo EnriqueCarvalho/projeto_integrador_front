@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Reserva } from '../model/reserva';
 import { LoginService } from './login.service';
 
@@ -17,6 +17,17 @@ export class ReservaService {
   
   ) { }
 
+  
+  getReservaById(idReserva: string|null): Observable<Reserva>{
+    const params = new HttpParams()
+    .set('idReserva', <string>idReserva); 
+    return this.httpClient.get<Reserva>(this.API_URL+'visualizar-reserva',{params}).pipe(
+      tap(
+        t =>console.log(t)
+      )
+    );
+  }
+
 
   getReservasByUsuario(): Observable<Reserva[]>{
     return this.httpClient.get<Reserva[]>(this.API_URL+'visualizar-reservas')
@@ -28,6 +39,16 @@ export class ReservaService {
     .set('idQuadra', <string>this.loginService.getUsuarioLogado().idQuadra?.toString()) 
     
     return this.httpClient.get<Reserva[]>(this.API_URL+'visualizar-reservas-quadra',{params})
+  }
+
+ 
+
+  
+
+  cadastrarReserva(reserva: Reserva): Observable<Reserva> {
+    const params = new HttpParams()
+    .set('idQuadra', <string>this.loginService.getUsuarioLogado().idQuadra?.toString());
+    return this.httpClient.post<Reserva>(this.API_URL+'cadastrar-reserva', reserva);      
   }
 
 }

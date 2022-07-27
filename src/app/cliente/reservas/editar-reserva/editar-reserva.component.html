@@ -1,7 +1,8 @@
 <div class="container">
-    <h1 class="mt-5 mb-6 text-center">Nova reserva</h1>
+    <h1 class="mt-5 mb-6 text-center">Editar reserva</h1>
     <form [formGroup]="formulario" (ngSubmit)="cadastrar()" >
-    
+      <input class="form-control" id="cd-id"  formControlName="id"  value="{{reserva.id}}" style="visibility: hidden;">
+       
         <div class="form-row" >
             <div class="col">
               <label for="quadra">Local</label>
@@ -26,16 +27,25 @@
             <select  class="form-control" id="hora"  formControlName="hora">
               <option *ngFor="let hor of horarios" [value]="hor.valorAlfa">{{ hor.valorAlfa }}</option>
             </select>
+            Horário antigo: {{horarioAntigo}}
           </div>
         
           
         </div>
       <span style="color: red;">*</span> itens obrigatórios
      
-    <div class="btns">
+      <div class="btns">
     
-      <button (click)="cancelar()"  class="btn btn-lg btn-primary text-right mt-5 ">Cancelar</button>
-      <button  type="submit" class="btn btn-lg btn-success text-right mt-5 ">Cadastrar</button>
+        <button [ngStyle]="{'display': display_c}"  type="button" (click)="cancelar();"  class="btn btn-lg btn-primary text-right mt-5 rounded-0">Cancelar</button>
+        <button  [ngStyle]="{'display': display_c}" type="button" (click)="excluir();" class="btn btn-lg btn-danger text-right mt-5 rounded-0" >Excluir</button>
+        <button  [ngStyle]="{'display': display_c}" type="submit" class="btn btn-lg btn-success text-right mt-5 rounded-0" >Salvar</button>
+        
+     
+      <button [ngStyle]="{'display': display_a}" type="button" (click)="voltar()"  class="btn btn-lg btn-primary text-right mt-5 rounded-0" ><i class="fa fa-arrow-left" aria-hidden="true"></i>
+         Voltar</button>
+        
+      <button [ngStyle]="{'display': display_a}" type="button" (click)="alterar()"  class="btn btn-lg btn-warning text-right mt-5 rounded-0" >Alterar</button>
+      
       
     </div>  
     </form>

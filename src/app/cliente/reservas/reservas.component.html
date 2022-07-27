@@ -5,15 +5,19 @@
         
         <accordion [isAnimated]="true">
             <accordion-group [heading]=" reserva.espaco.nome  +' - '+reserva.data" style="text-decoration: none;">              
-              <p>Horário: {{ reserva.hora }}</p>
-              <p>Cliente: {{ reserva.usuario.nome  }}</p>
+              <p><span style="font-weight: bold;">Horário:</span> {{ reserva.hora }}</p>              
+              <p><span style="font-weight: bold;">Local:</span> {{ reserva.espaco.quadra.nome  }}</p>
+              <p><span style="font-weight: bold;">Endereço:</span> Rua {{ reserva.espaco.quadra.ruaEnd }}, nº{{ reserva.espaco.quadra.nroEnd }}, {{ reserva.espaco.quadra.bairroEnd }}</p> 
+              <p><span style="font-weight: bold;">Descrição do local:</span> {{ reserva.espaco.descricao  }}</p>
+              <p><span style="font-weight: bold;">Valor:</span> {{ reserva.espaco.valor  }}</p>
               
               <button class="btn btn-sm btn-warning text-right mt-2" (click)="editar(reserva)">Editar</button>
             </accordion-group>
             </accordion>
       </ng-template >
       <div>
-        <button  type="button" class="btn btn-lg btn-success text-right mt-5 " (click)="novaReserva()">Nova reserva</button>
+        <button  type="button" class="btn btn-lg btn-success text-right mt-5 " (click)="novaReserva()">Adicionar <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
      
 
       </div>

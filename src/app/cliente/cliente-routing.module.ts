@@ -5,6 +5,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { MinhaContaComponent } from '../shared/components/minha-conta/minha-conta.component';
 import { ReservasComponent } from './reservas/reservas.component';
 import { NovaReservaComponent } from './reservas/nova-reserva/nova-reserva.component';
+import { EditarReservaComponent } from './reservas/editar-reserva/editar-reserva.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path:'nova-reserva',
     component: NovaReservaComponent
+  },
+  {
+    path:'editar-reserva/:reserva',
+    component: EditarReservaComponent
   }
 ];
 
