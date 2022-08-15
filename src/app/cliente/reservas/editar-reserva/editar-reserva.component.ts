@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Espaco } from 'src/app/shared/model/espaco';
 import { Quadra } from 'src/app/shared/model/quadra';
 import { Reserva } from 'src/app/shared/model/reserva';
@@ -22,7 +23,11 @@ export class EditarReservaComponent implements OnInit {
   display_a = 'block'
   horarioAntigo:string = ''
 
+  modalRef?: BsModalRef;
+  @ViewChild('templateConfirm') templateConfirm:any
+
   formulario: FormGroup = new FormGroup({});
+  formularioModal: FormGroup = new FormGroup({});
 
   reserva: Reserva = new Reserva()
   
@@ -42,7 +47,8 @@ export class EditarReservaComponent implements OnInit {
     private tabAuxService: TabAuxiliarService,
     private espacoService: EspacoService,
     private reservaService: ReservaService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private modalService: BsModalService,
   ) {}
 
   ngOnInit(): void {   
@@ -57,6 +63,12 @@ export class EditarReservaComponent implements OnInit {
       espaco: [null, [Validators.required, Validators.maxLength(35)]],
       data: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(35)]],
       hora: [null, [Validators.required]],
+    }) 
+
+    
+    this.formularioModal = this.formBuilder.group({
+      motivo: [null, [Validators.required,Validators.minLength(5) ,Validators.maxLength(100)]],
+      
     }) 
     this.disableForm() 
     
@@ -166,19 +178,32 @@ export class EditarReservaComponent implements OnInit {
     this.onSelectData()
   }
 
-  excluir(){
 
-    // this.espacoService.excluirEspaco(this.espaco).subscribe(e=>{
-    //   console.log(e)
-    //   if (e == "sucess"){
-      
-    //     alert("Espaço excluido com sucessso")
-    //     this.router.navigate(['funcionario/espacos'])
-    //   }else{
-    //     alert("Erro ao excluir Espaço: "+e)  
-    //   }      
+  openModal(template: TemplateRef<any>){
+    this.modalRef = this.modalService.show(template, {
+      ariaDescribedby: 'my-modal-description',
+      ariaLabelledBy: 'my-modal-title'
+    });  
+  }
+  excluirReserva(){
+
+    if(this.formularioModal.valid){
+
+  
+    this.reserva.motivoCancel =  this.formularioModal.get('motivo')?.value
+    this.reserva.dataCancel = new Date().toString()
+    this.reservaService.excluirReserva(this.reserva).subscribe(r=>{
+      console.log(r)
+      if (r != null){
+        this.modalRef?.hide()
+        alert("Reserva excluido com sucessso")
+        this.router.navigate(['cliente/reservas'])
+      }else{
+        alert("Erro ao excluir reserva: "+r)  
+      }      
         
-    //   })   
+      })   
+    }
     
     }
 

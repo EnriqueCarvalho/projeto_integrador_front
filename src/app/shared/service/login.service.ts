@@ -31,7 +31,7 @@ export class LoginService {
     this.usuarioLogadoEmitter.emit(usuario)
     console.log(usuario.tipo)
     //verifica se o usuário é do tipo cliente ou funcionário
-    if(usuario.tipo != 'C'){
+    if(usuario.tipo != '[C]'){
       this.routP = 'funcionario'
       //document.documentElement.style.setProperty('--primaria','#fa8334')
     }else{

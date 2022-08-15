@@ -6,7 +6,7 @@
   
      <div class="nav-top" style="cursor:pointer ;" > 
       <p>
-        <span *ngIf="usuarioLogado.tipo=='A' || usuarioLogado.tipo=='F'" title="Usuário Funcionário"><i class="fa fa-cogs" aria-hidden="true" style="margin-right: 7px;"></i></span>
+        <span *ngIf="usuarioLogado.tipo=='[A]' || usuarioLogado.tipo=='[F]'" title="Usuário Funcionário"><i class="fa fa-cogs" aria-hidden="true" style="margin-right: 7px;"></i></span>
         <span style="font-size:20px ;padding-right: 25px;">{{usuarioLogado.nome}}</span>
         <i class="fas fa-sign-out-alt fa-2x" (click)="logout()"></i>
       </p>
@@ -26,7 +26,7 @@
             <div> 
     
               <!-- Cliente -->
-              <div *ngIf="usuarioLogado.tipo=='C'">
+              <div *ngIf="usuarioLogado.tipo=='[C]'">
                 <li>
                   <a routerLink="cliente/reservas" onclick="  $('nav').removeClass('active');">
                     <i class="far fa-calendar-check fa-lg p-25"></i> <span>Reservas</span></a>
@@ -34,7 +34,7 @@
               </div>
               
               <!-- ADM e Funcionário -->
-              <div *ngIf="usuarioLogado.tipo=='A' || usuarioLogado.tipo=='F'">
+              <div *ngIf="usuarioLogado.tipo=='[A]' || usuarioLogado.tipo=='[F]'">
                 <li>
                   <a routerLink="funcionario/reservas" onclick="  $('nav').removeClass('active');">
                     <i class="far fa-calendar-check fa-lg p-25"></i> <span>Reservas</span></a>
@@ -53,14 +53,14 @@
               </div>
 
               <!-- Somente ADM -->
-              <div *ngIf="usuarioLogado.tipo=='A'">
+              <div *ngIf="usuarioLogado.tipo=='[A]'">
                 <li>
                   <a routerLink="funcionario/quadra" onclick="  $('nav').removeClass('active');">
                     <i class="fa fa-cube fa-lg p-25" aria-hidden="true"></i><span>Quadra</span></a>
                 </li>
               </div>
 
-              <div *ngIf="usuarioLogado.tipo=='A'">
+              <div *ngIf="usuarioLogado.tipo=='[A]'">
                 <li>
                   <a routerLink="funcionario/funcionarios" onclick="  $('nav').removeClass('active');">
                     <i class="fa fa-id-card fa-lg p-25" aria-hidden="true"></i><span>Funcionários</span></a>

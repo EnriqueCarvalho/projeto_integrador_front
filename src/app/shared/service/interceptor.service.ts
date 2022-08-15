@@ -18,12 +18,12 @@ export class InterceptorService implements HttpInterceptor{
     if(usuario_logado){
         
       const authRequest = req.clone(
-        {setHeaders:{'X-usuario': 'id:' + usuario_logado.id }
+        {setHeaders:{'X-usuario': 'id:' + usuario_logado.id,'Authorization':'Bearer '+usuario_logado.token }
        
       }
         
       );
-      return next.handle(authRequest);
+      return next.handle(authRequest); 
     }else {
       return next.handle(req);
     }

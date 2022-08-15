@@ -16,6 +16,9 @@ export class MinhaContaComponent implements OnInit {
   display_c = 'none'
   display_a = 'block'
 
+  cpf = [ /[0-9]/, /\d/, /\d/, '.',/[1-9]/, /\d/, /\d/,'.',/[1-9]/, /\d/, /\d/,'-' , /\d/, /\d/,]
+  fone = [ '(',/[0-9]/, /\d/,')',' ', /\d/,' ',/[1-9]/, /\d/, /\d/,/[1-9]/,'-', /\d/, /\d/ , /\d/, /\d/,]
+
 
   constructor( 
     private formBuilder: FormBuilder,
@@ -118,7 +121,6 @@ export class MinhaContaComponent implements OnInit {
      
         
       })
- 
     
     
   }

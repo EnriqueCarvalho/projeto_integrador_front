@@ -14,6 +14,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { CadastroFuncionariosComponent } from './cadastro-funcionarios/cadastro-funcionarios.component';
 import { NovoFuncionarioComponent } from './cadastro-funcionarios/novo-funcionario/novo-funcionario.component';
 import { CadastroHorariosComponent } from './cadastro-horarios/cadastro-horarios.component';
+import { CpfPipe } from '../shared/pipe/cpf.pipe';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CadastroHorariosComponent } from './cadastro-horarios/cadastro-horarios
     EditarEspacoComponent,
     CadastroFuncionariosComponent,
     NovoFuncionarioComponent,
-    CadastroHorariosComponent
+    CadastroHorariosComponent,
+    CpfPipe
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,9 @@ import { CadastroHorariosComponent } from './cadastro-horarios/cadastro-horarios
     ReactiveFormsModule,
     AccordionModule.forRoot(),
     TextMaskModule
+    
+    
+    
   ]
 })
 export class FuncionarioModule { }

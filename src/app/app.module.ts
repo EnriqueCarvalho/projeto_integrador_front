@@ -1,4 +1,4 @@
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, Pipe } from '@angular/core';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -13,6 +13,8 @@ import { InterceptorService } from './shared/service/interceptor.service';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { TextMaskModule } from 'angular2-text-mask';
 import { ErrorhandlerService } from './shared/service/errorhandler.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CpfPipe } from './shared/pipe/cpf.pipe';
 
 
 
@@ -21,6 +23,7 @@ import { ErrorhandlerService } from './shared/service/errorhandler.service';
     AppComponent,
     LoginComponent,
     MenuComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -31,15 +34,18 @@ import { ErrorhandlerService } from './shared/service/errorhandler.service';
     FontAwesomeModule,
     HttpClientModule,
     AccordionModule.forRoot(),
-    TextMaskModule
+    TextMaskModule,
+    ModalModule.forRoot(),
+   
   ],
   exports:[
     MenuComponent,
-    TextMaskModule
+    TextMaskModule,
+    ModalModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
-    {provide: ErrorHandler, useClass: ErrorhandlerService}  
+    {provide: ErrorHandler, useClass: ErrorhandlerService},  
   ],
   bootstrap: [AppComponent]
   

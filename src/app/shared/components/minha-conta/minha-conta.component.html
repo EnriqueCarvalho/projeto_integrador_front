@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-4">
           <label for="cd-cpf">CPF <span style="color: red;">*</span></label>
-          <input class="form-control" id="cd-cpf"  formControlName="cpf"  value="{{usuario.cpf}}">
+          <input  [textMask]="{mask: cpf}" class="form-control" id="cd-cpf"  formControlName="cpf"  value="{{usuario.cpf}}">
             
         </div>  
       </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-4">
           <label for="cd-fone">FONE <span style="color: red;">*</span></label>
-          <input class="form-control"  id="cd-fone" formControlName="fone" value="{{usuario.fone}}">
+          <input [textMask]="{mask: fone}" class="form-control"  id="cd-fone" formControlName="fone" value="{{usuario.fone}}">
             
         </div>  
       </div>

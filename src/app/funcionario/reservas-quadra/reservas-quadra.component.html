@@ -3,17 +3,27 @@
     <h1>Reservas</h1>
     <ng-template  ngFor [ngForOf]="reservas" let-reserva let-i="index">
         
-        <accordion [isAnimated]="true">
-            <accordion-group [heading]=" reserva.espaco.nome  +' - '+reserva.data" style="text-decoration: none;">              
-              <p>Horário: {{ reserva.hora }}</p>
-              <p>Cliente: {{ reserva.usuario.nome  }}</p>
-              
-              <button class="btn btn-sm btn-warning text-right mt-2" (click)="editar(reserva)">Editar</button>
+        <accordion [isAnimated]="true" >
+        
+         
+            <accordion-group [heading]=" reserva.espaco.nome  +' - '+reserva.data" > 
+                <span *ngIf="reserva.motivoCancel != null" style="font-weight:bold ;"><i class="fa fa-ban mb-4" aria-hidden="true" style="color:red ;"></i> Reserva cancelada</span>
+                  <p>Horário: {{ reserva.hora }}</p>
+                  <p>Cliente: {{ reserva.usuario.nome  }}</p>
+                  <p>Fone: {{ reserva.usuario.fone  }}</p>
+                  <p>CPF: {{ reserva.usuario.cpf  | cpf}}</p>                  
+                  <p>Email: {{ reserva.usuario.email }}</p>
+                  <p *ngIf="reserva.motivoCancel != null">Motivo do cancelamento: {{ reserva.motivoCancel }}</p>
+                  <p *ngIf="reserva.motivoCancel != null">Data cancelamento: {{ reserva.dataCancel | date : 'dd/MM/yyyy HH:mm' }}</p>
+                  
+                  <!-- <button class="btn btn-sm btn-warning text-right mt-2" (click)="editar(reserva)">Editar</button> -->
+            
             </accordion-group>
+        
             </accordion>
       </ng-template >
       <div>
-        <button  type="button" class="btn btn-lg btn-success text-right mt-5 " (click)="novoEspaco()">Nova reserva</button>
+        <!-- <button  type="button" class="btn btn-lg btn-success text-right mt-5 " (click)="novoEspaco()">Nova reserva</button> -->
      
 
       </div>

@@ -39,7 +39,7 @@ export class ReservaService {
     .set('idQuadra', <string>this.loginService.getUsuarioLogado().idQuadra?.toString()) 
     
     return this.httpClient.get<Reserva[]>(this.API_URL+'visualizar-reservas-quadra',{params})
-  }
+  } 
 
  
 
@@ -50,5 +50,12 @@ export class ReservaService {
     .set('idQuadra', <string>this.loginService.getUsuarioLogado().idQuadra?.toString());
     return this.httpClient.post<Reserva>(this.API_URL+'cadastrar-reserva', reserva);      
   }
+
+  
+
+  excluirReserva(reserva: Reserva): Observable<Reserva> {
+    return this.httpClient.put<Reserva>(this.API_URL+'excluir-reserva',reserva);      
+  }
+
 
 }

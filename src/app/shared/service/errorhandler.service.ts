@@ -1,12 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
+import { LoginService } from './login.service';
+import { UsuarioService } from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorhandlerService implements ErrorHandler {
 
-  constructor() { }
+  constructor( private loginService:LoginService) { }
  
 
   handleError(error: HttpErrorResponse | any): void {
@@ -27,6 +29,7 @@ export class ErrorhandlerService implements ErrorHandler {
           break;
         case 403:
           alert('Acesso negado')
+          this.loginService.logout()
           break;
           case 0:
             alert('Não foi possível conectar ao servidor...')
